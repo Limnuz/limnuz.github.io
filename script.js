@@ -37,4 +37,4 @@ function getURLs(url){
 
 //http://127.0.0.1:5500/index.html?channel=https://www.youtube.com/channel/UCwJchClzCtxlv8QFGH6pjRQ?sub_confirmation=1&link=http://duckduckgo.com
 //file:///media/marcelo/Comum/projetos/javascript/inscricaoYT/index.html?channel=https://www.youtube.com/channel/UCwJchClzCtxlv8QFGH6pjRQ?sub_confirmation=1&link=http://duckduckgo.com
-//https://limnuz.github.io/?channel=https://www.youtube.com/channel/UCwJchClzCtxlv8QFGH6pjRQ?sub_confirmation=1&link=http://duckduckgo.com
+//https://limnuz.github.io/index.html?channel=https://www.youtube.com/channel/UCwJchClzCtxlv8QFGH6pjRQ?sub_confirmation=1&link=http://duckduckgo.com
