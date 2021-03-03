@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionador</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+    <header>
+        <h1>Banner</h1>
+    </header>
+
+    <section>
+        <div>
+            <a href="http://google.com.br" target="_blank" id="channel" onclick="setTimeout(enableButton, 3000)">
+                CLIQUE AQUI E SE INSCREVA NO CANAL PARA LIBERAR O LINK.
+            </a>
+            
+        </div>
+        <div>
+            <p><input type="button" value="Get Link" disabled="true" id="getlink" onclick="getLink()"></p>
+        </div>
+        <div id="link">
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy;CursoemVideo</p>
+    </footer>
+
+    <script type="text/javascript">
+        var adfly_id = 22203685;
+        var adfly_advert = 'int';
+        var frequency_cap = 5;
+        var frequency_delay = 5;
+        var init_delay = 3;
+        var popunder = true;
+    </script>
+    <script src="https://cdn.adf.ly/js/entry.js"></script>
+    
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
