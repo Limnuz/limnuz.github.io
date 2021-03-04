@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionador</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+    <header>
+        <h1>Banner</h1>
+    </header>
+
+    <section>
+       <div>
+            <p>
+                Text:<br> <input type="text" size="55" id="text">
+            </p>
+            <p>
+                First Link:<br> <input type="text" size="55" id="link1">
+            </p>
+            <p>
+                Final Link:<br> <input type="text" size="55" id="link2">
+            </p>
+            <p>
+                <input type="button" value="Get URL" onclick="getUrl()">
+            </p>
+            <p id="pRes">
+                <textarea id="result" cols="55" rows="5" disabled>  </textarea> <br>
+                <button type="button" id="copy" disabled onclick="copyUrl()">Copy</button>
+            </p>
+        </div>    
+    </section>
+
+    <footer>
+        <p>&copy;Limnuz</p>
+    </footer>
+
+     
+    <script src="gerador.js"></script>
+
+    
+</body>
+</html>
+
