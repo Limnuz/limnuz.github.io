@@ -97,5 +97,5 @@ function jsURL(url, separator='||'){
 
 
 
-//https://limnuz.github.io/link.html?dGV4dD18fENMSVFVRSBBUVVJIFBBUkEgTElCRVJBUnx8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tfHwmbGluazI9fHxodHRwOi8vd3d3LmR1Y2xkdWNrZ28uY29tfHwmdGltZT0xNjE1MDAzODg5MzIw
+//https://limnuz.github.io/link.html?dGV4dD18fENMSVFVRSBBUVVJIFBBUkEgTElCRVJBUnx8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tfHwmbGluazI9fHxodHRwOi8vd3d3LmR1Y2tkdWNrZ28uY29tfHwmdGltZT0xNjE1MDA1MDkyMTg2
 //http://127.0.0.1:5500/link.html?dGV4dD18fENMSVFVRSBBUVVJIFBBUkEgTElCRVJBUnx8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tfHwmbGluazI9fHxodHRwOi8vd3d3LmR1Y2tkdWNrZ28uY29tfHwmdGltZT0xNjE1MDA1MDkyMTg2
