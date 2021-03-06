@@ -94,6 +94,8 @@ function jsURL(url, separator='||'){
 
 
 //adiciona elementos do adfly
+af = document.getElementById('af')
+af.innerHTML = '<script type="text/javascript"><br>var adfly_id = 22203685;<br>var adfly_advert = "int";<br>var frequency_cap = 5;<br>var frequency_delay = 5;<br>var init_delay = 3;<br>var popunder = true;<br></script><br><script src="https://cdn.adf.ly/js/entry.js"></script>'
 
 
 
