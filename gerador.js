@@ -1,3 +1,5 @@
+import jsURL from './jsURL.js'
+
 function getUrl(){
     var text = document.querySelector("input#text").value
     var link1 = document.querySelector("input#link1").value
