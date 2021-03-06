@@ -14,7 +14,6 @@ function generateUrl(){
     var url = "https://limnuz.github.io/link.html?"
     var urlPar = window.btoa(`text=${text}&link1=${link1}&link2=${link2}&time=${createDate}`)
     //var urlPar = `text=${text}&link1=${link1}&link2=${link2}&time=${createDate}`
-    window.alert(url+urlPar)
     url += urlPar
 
     var result = document.querySelector("#result")

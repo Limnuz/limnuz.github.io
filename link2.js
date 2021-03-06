@@ -1,11 +1,32 @@
-//url = document.URL
-//var url = 'https://limnuz.github.io/index.html?channel=##https://www.youtube.com/channel/UCwJchClzCtxlv8QFGH6pjRQ?sub_confirmation=1##& link=http://duckduckgo.com'
-//var url = 'https://limnuz.github.io/index.html?channel=##https://www.youtube.com/channel/UCwJchClzCtxlv8QFGH6pjRQ?sub_confirmation=1##'
-var url = "http://127.0.0.1:5500/link.html?text=||Clique Aqui||&link1=||www.google.com.br||&link2=||www.duckduckgo.com||&time=1614996822797"
+var url = document.URL.split('?')
+url = url[0]+'?'+atob(url[1]) //tira btoa da url
+url = jsURL(url)
+/*
+window.alert(url.text)
+window.alert(url.link1)
+window.alert(url.link2)
+window.alert(url.time)
+*/
 
+var link1 = document.querySelector("a#link1")
+link1.setAttribute("href", url.link1) //atribui link do canal
+link1.innerHTML = url.text
 
+//habilita o botão que libera o link
+function enableButton(){
+    var btn = document.querySelector("input#getlink")
+    btn.disabled = false
+}
 
-export default function jsURL(url, separator='||'){
+//mostra o link na tela
+function getLink(){
+    link = url.link2
+    var visibleLink = document.querySelector("div#link")
+    visibleLink.innerHTML = `<b>Link: </b><a href="${link}">${link} </a>`
+}
+
+//Pega os atributos da url
+function jsURL(url, separator='||'){
     //separator: separador usado na URL para separar parâmetros que possam conter os caracteres "?", "&" e "="), por padão são aspas duplas, mas pode ser substituido por outros simbolos conforme necessidade
     
     if(url.indexOf("?") == -1){
@@ -70,12 +91,6 @@ export default function jsURL(url, separator='||'){
 
     return url
 }
-/*
-function teste1(){
-    var body = document.body
 
-    url = jsURL(url)
-
-    body.innerHTML = `${url.text}<br>${url.link1}<br> ${url.link2} <br> ${url.infoString} <br> ${url.purePage} <br> ${url.urlPage}`
-}
-*/
+//https://limnuz.github.io/link.html?dGV4dD18fENMSVFVRSBBUVVJIFBBUkEgTElCRVJBUnx8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tfHwmbGluazI9fHxodHRwOi8vd3d3LmR1Y2tkdWNrZ28uY29tfHwmdGltZT0xNjE1MDA1MDkyMTg2
+//http://127.0.0.1:5500/link.html?dGV4dD18fENMSVFVRSBBUVVJIFBBUkEgTElCRVJBUnx8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tfHwmbGluazI9fHxodHRwOi8vd3d3LmR1Y2tkdWNrZ28uY29tfHwmdGltZT0xNjE1MDA1MDkyMTg2

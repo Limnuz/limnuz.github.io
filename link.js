@@ -1,6 +1,18 @@
-var url = document.URL.split('?')
+var url = document.URL
+
+url = url.split('?')
 url = url[0]+'?'+atob(url[1]) //tira btoa da url
 url = jsURL(url)
+
+var now = new Date().getTime()
+var pastTime = now - Number(url.time)
+if(pastTime < 864000000){
+    url = document.URL
+    url = url.replace('nk.h', 'nk2.h')
+    var noIf = document.getElementById('noIf')
+    noIf.innerHTML= `<meta http-equiv="refresh" content="0; URL='${url}'"/>`
+}
+
 /*
 window.alert(url.text)
 window.alert(url.link1)
@@ -92,12 +104,10 @@ function jsURL(url, separator='||'){
     return url
 }
 
-
-//adiciona elementos do adfly
-af = document.getElementById('af')
-af.innerHTML = '<script type="text/javascript"><br>var adfly_id = 22203685;<br>var adfly_advert = "int";<br>var frequency_cap = 5;<br>var frequency_delay = 5;<br>var init_delay = 3;<br>var popunder = true;<br></script><br><script src="https://cdn.adf.ly/js/entry.js"></script>'
-
-
-
 //https://limnuz.github.io/link.html?dGV4dD18fENMSVFVRSBBUVVJIFBBUkEgTElCRVJBUnx8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tfHwmbGluazI9fHxodHRwOi8vd3d3LmR1Y2tkdWNrZ28uY29tfHwmdGltZT0xNjE1MDA1MDkyMTg2
+
 //http://127.0.0.1:5500/link.html?dGV4dD18fENMSVFVRSBBUVVJIFBBUkEgTElCRVJBUnx8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tfHwmbGluazI9fHxodHRwOi8vd3d3LmR1Y2tkdWNrZ28uY29tfHwmdGltZT0xNjE1MDA1MDkyMTg2
+
+//https://limnuz.github.io/link.html?dGV4dD18fG1haXMgZGUgMTAgZGlhc3x8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tLmJyfHwmbGluazI9fHxodHRwOi8vd3d3LmdpdGh1Yi5jb218fCZ0aW1lPTE2MTQyMDU4MjM0NTc=
+
+//http://127.0.0.1:5500/link.html?dGV4dD18fG1haXMgZGUgMTAgZGlhc3x8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tLmJyfHwmbGluazI9fHxodHRwOi8vd3d3LmdpdGh1Yi5jb218fCZ0aW1lPTE2MTQyMDU4MjM0NTc=
