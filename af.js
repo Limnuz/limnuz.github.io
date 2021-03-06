@@ -4,3 +4,5 @@ var frequency_cap = 5;
 var frequency_delay = 5;
 var init_delay = 3;
 var popunder = true;
+
+window.alert ('ola')

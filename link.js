@@ -12,16 +12,6 @@ var link1 = document.querySelector("a#link1")
 link1.setAttribute("href", url.link1) //atribui link do canal
 link1.innerHTML = url.text
 
-//adiciona elementos do adfly
-var af = document.createElement('script')
-af.setAttribute('src', 'af.js')
-
-var af2 = document.createElement('script')
-af2.setAttribute('src', 'https://cdn.adf.ly/js/entry.js')
-
-document.getElementsByTagName('body')[0].appendChild(af)
-document.getElementsByTagName('body')[0].appendChild(af2)
-
 //habilita o botão que libera o link
 function enableButton(){
     var btn = document.querySelector("input#getlink")
@@ -104,14 +94,7 @@ function jsURL(url, separator='||'){
 
 
 //adiciona elementos do adfly
-var af = document.createElement('script')
-af.setAttribute('src', 'af.js')
 
-var af2 = document.createElement('script')
-af2.setAttribute('src', 'https://cdn.adf.ly/js/entry.js')
-
-document.getElementsByTagName('body')[0].appendChild(af)
-document.getElementsByTagName('body')[0].appendChild(af2)
 
 
 //https://limnuz.github.io/link.html?dGV4dD18fENMSVFVRSBBUVVJIFBBUkEgTElCRVJBUnx8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tfHwmbGluazI9fHxodHRwOi8vd3d3LmR1Y2xkdWNrZ28uY29tfHwmdGltZT0xNjE1MDAzODg5MzIw
