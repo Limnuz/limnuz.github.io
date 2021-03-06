@@ -1,6 +1,7 @@
 //url = document.URL
-//var url = 'https://limnuz.github.io/index.html?channel=##https://www.youtube.com/channel/UCwJchClzCtxlv8QFGH6pjRQ?sub_confirmation=1##&link=http://duckduckgo.com'
+//var url = 'https://limnuz.github.io/index.html?channel=##https://www.youtube.com/channel/UCwJchClzCtxlv8QFGH6pjRQ?sub_confirmation=1##& link=http://duckduckgo.com'
 //var url = 'https://limnuz.github.io/index.html?channel=##https://www.youtube.com/channel/UCwJchClzCtxlv8QFGH6pjRQ?sub_confirmation=1##'
+var url = "http://127.0.0.1:5500/link.html?text=||Clique Aqui||&link1=||www.google.com.br||&link2=||www.duckduckgo.com||&time=1614996822797"
 
 
 
@@ -14,18 +15,18 @@ export default function jsURL(url, separator='||'){
     var urlPage = url
     url = url.split(separator)
     
-    //codifica os atributos entre os separadores("")
-    for(i in url){
+    //codifica os atributos entre os separadores(||)
+    for(var i in url){
         if(i%2 != 0){
             
-            url[i] = separator + window.btoa(url[i]) + separator
+            url[i] = separator + window.encodeURI(url[i]) + separator
             
         }
     }
     
     
     //Reune novamente a string depois de codificados os endereços
-    var temp = ""
+    var temp = ''
     for(let i in url){
         temp += url[i]
     }
@@ -33,7 +34,6 @@ export default function jsURL(url, separator='||'){
     
     var purePage = temp.split("?")[0]
     url = temp.split("?")[1]
-    
     
     temp = url.split("&")
     url = []
@@ -45,7 +45,7 @@ export default function jsURL(url, separator='||'){
     }
 
     
-
+    
     //deixa os parametros em formato de texto para ser convertido em JSON
     temp = "{"
     for(let i = 0; i < url.length; i+=2){
@@ -53,7 +53,7 @@ export default function jsURL(url, separator='||'){
             temp += `"${url[i]}":"${url[i+1]}",`
         } else {
             
-            temp += `"${url[i]}":"${window.atob(url[i+1].split(separator)[1])}",`
+            temp += `"${url[i]}":"${window.decodeURI(url[i+1].split(separator)[1])}",`
         }
     }
     
@@ -70,11 +70,12 @@ export default function jsURL(url, separator='||'){
 
     return url
 }
-
+/*
 function teste1(){
     var body = document.body
 
-    url = jsURL(url, "##")
+    url = jsURL(url)
 
-    body.innerHTML = `${url.channel}<br> ${url.link} <br> ${url.infoString} <br> ${url.purePage} <br> ${url.urlPage}`
+    body.innerHTML = `${url.text}<br>${url.link1}<br> ${url.link2} <br> ${url.infoString} <br> ${url.purePage} <br> ${url.urlPage}`
 }
+*/
