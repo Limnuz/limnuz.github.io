@@ -29,22 +29,3 @@ function generateUrl(){
     })
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function copyUrl(){
-    
-}
