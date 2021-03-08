@@ -40,7 +40,7 @@ function setCookie(time, expiration = 31536000000){
 
     window.alert(time)
 
-    document.cookie = `time=true; expires=${time}; path=/`
+    document.cookie = `time=1; expires=${time}; path=/`
     document.cookie = "Nome=Marcelo; expires=${time}; path=/"
     document.cookie = "sobrenome = Lima; expires=${time}; path=/"
     

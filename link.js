@@ -4,12 +4,13 @@ url = url.split('?')
 url = url[0]+'?'+atob(url[1]) //tira btoa da url
 url = jsURL(url)
 
-var coks = cookies()
-window.alert(document.cookie)
+var cookies = cookies() //recebe os cookies na forma de objeto JSON
 
 var now = new Date().getTime()
 var pastTime = now - Number(url.time)
-if(pastTime < 864000000){
+
+
+if(pastTime < 864000000 || cookies.time == '1'){
     url = document.URL
     url = url.replace('nk.h', 'nk2.h')
     var noIf = document.getElementById('noIf')
@@ -44,12 +45,11 @@ function getLink(){
 
 //Pega os cookies e retorna em formato objto JSON
 function cookies(){
-    var c = document.cookies
-    window.alert(c)
-    if(c == ''){
+    var c = document.cookie
+    if(c == '' || typeof c === 'undefined'){
         return {'allCookies':''}
     }
-    var jasonCookies = c.split(';')
+    var jasonCookies = c.split('; ')
     var jasonCookies2 = '{'
     for(var i in jasonCookies){
         var j = jasonCookies[i].split("=")
@@ -136,6 +136,8 @@ http://127.0.0.1:5500/link.html?dGV4dD18fENMSVFVRSBBUVVJIFBBUkEgTElCRVJBUnx8Jmxp
 https://limnuz.github.io/link.html?dGV4dD18fG1haXMgZGUgMTAgZGlhc3x8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tLmJyfHwmbGluazI9fHxodHRwOi8vd3d3LmdpdGh1Yi5jb218fCZ0aW1lPTE2MTQyMDU4MjM0NTc=
 
 http://127.0.0.1:5500/link.html?dGV4dD18fG1haXMgZGUgMTAgZGlhc3x8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tLmJyfHwmbGluazI9fHxodHRwOi8vd3d3LmdpdGh1Yi5jb218fCZ0aW1lPTE2MTQyMDU4MjM0NTc=
+
+{"Nome":"Marcelo"," sobrenome":"Lima"," pub_22203685":"2*1615248627649"," nome":"ola"," idade":"2"," time":"1"}
 
 */
 
