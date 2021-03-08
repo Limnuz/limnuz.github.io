@@ -43,7 +43,7 @@ function getLink(){
     visibleLink.innerHTML = `<b>Link: </b><a href="${link}">${link} </a>`
 }
 
-//Pega os cookies e retorna em formato objto JSON
+//Pega os cookies e retorna em formato objeto JSON
 function cookies(){
     var c = document.cookie
     if(c == '' || typeof c === 'undefined'){
