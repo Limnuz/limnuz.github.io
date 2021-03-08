@@ -4,6 +4,9 @@ url = url.split('?')
 url = url[0]+'?'+atob(url[1]) //tira btoa da url
 url = jsURL(url)
 
+var coks = cookies()
+window.alert(document.cookie)
+
 var now = new Date().getTime()
 var pastTime = now - Number(url.time)
 if(pastTime < 864000000){
@@ -19,6 +22,8 @@ window.alert(url.link1)
 window.alert(url.link2)
 window.alert(url.time)
 */
+
+
 
 var link1 = document.querySelector("a#link1")
 link1.setAttribute("href", url.link1) //atribui link do canal
@@ -37,7 +42,27 @@ function getLink(){
     visibleLink.innerHTML = `<b>Link: </b><a href="${link}">${link} </a>`
 }
 
-//Pega os atributos da url
+//Pega os cookies e retorna em formato objto JSON
+function cookies(){
+    var c = document.cookies
+    window.alert(c)
+    if(c == ''){
+        return {'allCookies':''}
+    }
+    var jasonCookies = c.split(';')
+    var jasonCookies2 = '{'
+    for(var i in jasonCookies){
+        var j = jasonCookies[i].split("=")
+        jasonCookies2 += '"' + j[0] + '"' + ':' + '"' + j[1] + '"' + ','
+    }
+    jasonCookies = jasonCookies2.slice(0, jasonCookies2.length - 1) + '}'
+    jasonCookies = JSON.parse(jasonCookies)
+    jasonCookies.allCookies = c
+
+    return jasonCookies
+}
+
+//Pega os atributos da url e rotorna em formato de objeto JSON
 function jsURL(url, separator='||'){
     //separator: separador usado na URL para separar parâmetros que possam conter os caracteres "?", "&" e "="), por padão são aspas duplas, mas pode ser substituido por outros simbolos conforme necessidade
     
@@ -113,3 +138,4 @@ https://limnuz.github.io/link.html?dGV4dD18fG1haXMgZGUgMTAgZGlhc3x8JmxpbmsxPXx8a
 http://127.0.0.1:5500/link.html?dGV4dD18fG1haXMgZGUgMTAgZGlhc3x8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tLmJyfHwmbGluazI9fHxodHRwOi8vd3d3LmdpdGh1Yi5jb218fCZ0aW1lPTE2MTQyMDU4MjM0NTc=
 
 */
+

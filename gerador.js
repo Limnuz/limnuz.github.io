@@ -5,6 +5,8 @@ function generateUrl(){
     var link2 = document.querySelector("input#link2").value
     var createDate = new Date().getTime()
     var separator = '||'
+    
+    setCookie(createDate)
 
     text = separator + text + separator
     link1 = separator + link1 + separator
@@ -26,6 +28,21 @@ function generateUrl(){
         result.select();
         document.execCommand('copy');
         result.setAttribute('disabled','')
+        window.alert(document.cookie)
     })
+    
+}
+
+//Recebe time no formato Unix(Date().getTime(), e passa isso para um cookie com 1 ano de validade.)
+function setCookie(time, expiration = 31536000000){
+    time += expiration
+    var time = new Date(time).toUTCString()
+
+    window.alert(time)
+
+    document.cookie = `time=true; expires=${time}; path=/`
+    document.cookie = "Nome=Marcelo; expires=${time}; path=/"
+    document.cookie = "sobrenome = Lima; expires=${time}; path=/"
+    
     
 }
