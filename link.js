@@ -10,7 +10,7 @@ var now = new Date().getTime()
 var pastTime = now - Number(url.time)
 
 
-if(pastTime < 864000000 && cookies.time == '1'){ //TROCAR && POR || NA VERSÃO FINAL
+if(pastTime < 864000000 || cookies.time == '1'){ 
     url = document.URL
     url = url.replace('nk.h', 'nk2.h')
     var noAf = document.getElementById('noAf')
@@ -41,7 +41,7 @@ function getLink(){
     link =url.link2
     linkA = 'loadlink.html' + '?link=' + encodeURIComponent(link)
     linkB ='http://adf.ly/22203685/' + linkA
-        
+
     var visibleLink = document.querySelector("div#link")
     visibleLink.innerHTML = `<b>Link: </b><a href="${linkB}" target="_blank">${link} </a>`
 }
