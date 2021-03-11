@@ -17,6 +17,8 @@ if(pastTime < 864000000 || cookies.time == '1'){
     noAf.innerHTML= `<meta http-equiv="refresh" content="0; URL='${url}'"/>`
 }
 
+// teste de reataurar versao
+
 /*
 window.alert(url.text)
 window.alert(url.link1)
