@@ -17,11 +17,6 @@ if(pastTime < 864000000 || cookies.time == '1'){
     noAf.innerHTML= `<meta http-equiv="refresh" content="0; URL='${url}'"/>`
 }
 
-<<<<<<< HEAD
-=======
-// teste de reataurar versao
-
->>>>>>> parent of 85f9dde (teste 2)
 /*
 window.alert(url.text)
 window.alert(url.link1)
