@@ -10,11 +10,11 @@ var now = new Date().getTime()
 var pastTime = now - Number(url.time)
 
 
-if(pastTime < 864000000 || cookies.time == '1'){
+if(pastTime < 864000000 && cookies.time == '1'){ //TROCAR && POR || NA VERSÃO FINAL
     url = document.URL
     url = url.replace('nk.h', 'nk2.h')
-    var noIf = document.getElementById('noIf')
-    noIf.innerHTML= `<meta http-equiv="refresh" content="0; URL='${url}'"/>`
+    var noAf = document.getElementById('noAf')
+    noAf.innerHTML= `<meta http-equiv="refresh" content="0; URL='${url}'"/>`
 }
 
 /*
@@ -38,9 +38,12 @@ function enableButton(){
 
 //mostra o link na tela
 function getLink(){
-    link = url.link2
+    link =url.link2
+    linkA = 'loadlink.html' + '?link=' + encodeURIComponent(link)
+    linkB ='http://adf.ly/22203685/' + linkA
+        
     var visibleLink = document.querySelector("div#link")
-    visibleLink.innerHTML = `<b>Link: </b><a href="${link}">${link} </a>`
+    visibleLink.innerHTML = `<b>Link: </b><a href="${linkB}" target="_blank">${link} </a>`
 }
 
 //Pega os cookies e retorna em formato objeto JSON
