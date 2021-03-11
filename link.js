@@ -18,6 +18,7 @@ if(pastTime < 864000000 || cookies.time == '1'){
 }
 
 // teste de reataurar versao
+//teste 2 de restaurar versao
 
 /*
 window.alert(url.text)
