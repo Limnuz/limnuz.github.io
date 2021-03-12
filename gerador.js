@@ -1,6 +1,6 @@
 // pega os parâmetros digitados pelo usuario, gera o link e coloca ncaixa de texto.
 function generateUrl(){
-    var text = document.querySelector("input#text").value
+    var text = document.querySelector("textarea#text").value
     var link1 = document.querySelector("input#link1").value
     var link2 = document.querySelector("input#link2").value
     var createDate = new Date().getTime()
@@ -28,7 +28,6 @@ function generateUrl(){
         result.select();
         document.execCommand('copy');
         result.setAttribute('disabled','')
-        window.alert(document.cookie)
     })
     
 }
@@ -37,12 +36,7 @@ function generateUrl(){
 function setCookie(time, expiration = 31536000000){
     time += expiration
     var time = new Date(time).toUTCString()
-
-    window.alert(time)
-
     document.cookie = `time=1; expires=${time}; path=/`
     document.cookie = "Nome=Marcelo; expires=${time}; path=/"
-    document.cookie = "sobrenome = Lima; expires=${time}; path=/"
-    
-    
+    document.cookie = "sobrenome = Lima; expires=${time}; path=/"   
 }
