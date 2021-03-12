@@ -29,3 +29,8 @@ div{
     padding: 10px;
     margin: auto;
 }
+
+#pureLink{
+    font-style: normal;
+    color: white;
+}
