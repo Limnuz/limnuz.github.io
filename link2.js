@@ -1,12 +1,6 @@
 var url = document.URL.split('?')
 url = url[0]+'?'+atob(url[1]) //tira btoa da url
 url = jsURL(url)
-/*
-window.alert(url.text)
-window.alert(url.link1)
-window.alert(url.link2)
-window.alert(url.time)
-*/
 
 var link1 = document.querySelector("a#link1")
 link1.setAttribute("href", url.link1) //atribui link do canal

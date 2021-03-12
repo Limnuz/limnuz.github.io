@@ -17,15 +17,6 @@ if(pastTime < 864000000 || cookies.time == '1'){
     noAf.innerHTML= `<meta http-equiv="refresh" content="0; URL='${url}'"/>`
 }
 
-/*
-window.alert(url.text)
-window.alert(url.link1)
-window.alert(url.link2)
-window.alert(url.time)
-*/
-
-
-
 var link1 = document.querySelector("a#link1")
 link1.setAttribute("href", url.link1) //atribui link do canal
 link1.innerHTML = url.text
