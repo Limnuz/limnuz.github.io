@@ -4,9 +4,27 @@ url = url[0]+'?'+ decodeURIComponent(url[1])
 
 url = jsURL(url)
 
+
+
+var cookies = cookies() //recebe os cookies na forma de objeto JSON
+
+var now = new Date().getTime()
+var pastTime = now - Number(url.time)
+
+/*
+if(pastTime < 864000000 || cookies.time == '1'){ 
+    url = document.URL
+    url = url.replace('nk.h', 'nk2.h')
+    var noAf = document.getElementById('noAf')
+    noAf.innerHTML= `<meta http-equiv="refresh" content="0; URL='${url}'"/>`
+}
+*/
+
 var link1 = document.querySelector("a#link1")
 link1.setAttribute("href", url.link1) //atribui link do canal
-link1.innerHTML = url.text
+link1.innerHTML = replaceAll(url.text, '+', ' ')
+
+
 
 //habilita o botão que libera o link
 function enableButton(){
@@ -16,12 +34,44 @@ function enableButton(){
 
 //mostra o link na tela
 function getLink(){
-    link = url.link2
+    link =url.link2
+    //linkA = 'https://limnuz.github.io/loadlink.html' + '?link=' + link   
+    //linkB ='http://adf.ly/22203685/' + linkA
+    
+
     var visibleLink = document.querySelector("div#link")
-    visibleLink.innerHTML = `<b>Link: </b><a href="${link}">${link} </a>`
+    visibleLink.innerHTML = `<b>Link: </b><a href="${link}" target="_blank">${link} </a>`
 }
 
-//Pega os atributos da url
+// substitui todas as ocorrências de um determinado termo em uma string.
+function replaceAll(str, before, later){
+    while(str.indexOf(before) != -1){
+        str = str.replace(before, later)
+    }
+
+    return str
+}
+
+//Pega os cookies e retorna em formato objeto JSON
+function cookies(){
+    var c = document.cookie
+    if(c == '' || typeof c === 'undefined'){
+        return {'allCookies':''}
+    }
+    var jasonCookies = c.split('; ')
+    var jasonCookies2 = '{'
+    for(var i in jasonCookies){
+        var j = jasonCookies[i].split("=")
+        jasonCookies2 += '"' + j[0] + '"' + ':' + '"' + j[1] + '"' + ','
+    }
+    jasonCookies = jasonCookies2.slice(0, jasonCookies2.length - 1) + '}'
+    jasonCookies = JSON.parse(jasonCookies)
+    jasonCookies.allCookies = c
+
+    return jasonCookies
+}
+
+//Pega os atributos da url e rotorna em formato de objeto JSON
 function jsURL(url, separator='||'){
     //separator: separador usado na URL para separar parâmetros que possam conter os caracteres "?", "&" e "="), por padão são aspas duplas, mas pode ser substituido por outros simbolos conforme necessidade
     
@@ -48,7 +98,6 @@ function jsURL(url, separator='||'){
         temp += url[i]
     }
 
-    
     var purePage = temp.split("?")[0]
     url = temp.split("?")[1]
     
@@ -61,8 +110,6 @@ function jsURL(url, separator='||'){
         }
     }
 
-    
-    
     //deixa os parametros em formato de texto para ser convertido em JSON
     temp = "{"
     for(let i = 0; i < url.length; i+=2){
@@ -77,7 +124,6 @@ function jsURL(url, separator='||'){
     temp = temp.substring(0, temp.length - 1) + "}"
     
     url = temp
-
     url = JSON.parse(url)
     url.urlPage = urlPage
     url.purePage = purePage
@@ -87,6 +133,9 @@ function jsURL(url, separator='||'){
 
     return url
 }
+/*
+http://127.0.0.1:5500/link.html?text%3D%7C%7CTestando%20as%20coisas%2Baqui%3F%20%24%24%24%20%26%26%26%20%3D%3D%3D%7C%7C%26link1%3D%7C%7Chttp%3A%2F%2Fwww.google.com.br%3Fvar1%3Dnada%7C%7C%26link2%3D%7C%7Chttp%3A%2F%2Fwww.duckduckgo.com%7C%7C%26time%3D1615646881164
 
-//https://limnuz.github.io/link.html?dGV4dD18fENMSVFVRSBBUVVJIFBBUkEgTElCRVJBUnx8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tfHwmbGluazI9fHxodHRwOi8vd3d3LmR1Y2tkdWNrZ28uY29tfHwmdGltZT0xNjE1MDA1MDkyMTg2
-//http://127.0.0.1:5500/link.html?dGV4dD18fENMSVFVRSBBUVVJIFBBUkEgTElCRVJBUnx8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tfHwmbGluazI9fHxodHRwOi8vd3d3LmR1Y2tkdWNrZ28uY29tfHwmdGltZT0xNjE1MDA1MDkyMTg2
+https://limnuz.github.io/link.html?text%3D%7C%7CTestando%20as%20coisas%2Baqui%3F%20%24%24%24%20%26%26%26%20%3D%3D%3D%7C%7C%26link1%3D%7C%7Chttp%3A%2F%2Fwww.google.com.br%3Fvar1%3Dnada%7C%7C%26link2%3D%7C%7Chttp%3A%2F%2Fwww.duckduckgo.com%7C%7C%26time%3D1615646881164
+
+*/
