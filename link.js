@@ -4,8 +4,6 @@ url = url[0]+'?'+ decodeURIComponent(url[1])
 
 url = jsURL(url)
 
-
-
 var cookies = cookies() //recebe os cookies na forma de objeto JSON
 
 var now = new Date().getTime()
@@ -21,8 +19,6 @@ if(pastTime < 864000000 || cookies.time == '1'){
 var link1 = document.querySelector("a#link1")
 link1.setAttribute("href", url.link1) //atribui link do canal
 link1.innerHTML = replaceAll(url.text, '+', ' ')
-
-
 
 //habilita o botão que libera o link
 function enableButton(){
@@ -89,8 +85,7 @@ function jsURL(url, separator='||'){
         }
     }
     
-    
-    //Reune novamente a string depois de codificados os endereços
+        //Reune novamente a string depois de codificados os endereços
     var temp = ''
     for(let i in url){
         temp += url[i]
@@ -131,9 +126,3 @@ function jsURL(url, separator='||'){
 
     return url
 }
-/*
-http://127.0.0.1:5500/link.html?text%3D%7C%7CTestando%20as%20coisas%2Baqui%3F%20%24%24%24%20%26%26%26%20%3D%3D%3D%7C%7C%26link1%3D%7C%7Chttp%3A%2F%2Fwww.google.com.br%3Fvar1%3Dnada%7C%7C%26link2%3D%7C%7Chttp%3A%2F%2Fwww.duckduckgo.com%7C%7C%26time%3D1615646881164
-
-https://limnuz.github.io/link.html?text%3D%7C%7CTestando%20as%20coisas%2Baqui%3F%20%24%24%24%20%26%26%26%20%3D%3D%3D%7C%7C%26link1%3D%7C%7Chttp%3A%2F%2Fwww.google.com.br%3Fvar1%3Dnada%7C%7C%26link2%3D%7C%7Chttp%3A%2F%2Fwww.duckduckgo.com%7C%7C%26time%3D1615646881164
-
-*/
