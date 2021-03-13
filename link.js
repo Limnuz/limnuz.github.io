@@ -5,7 +5,7 @@ function init(){
     var url = document.URL
 
     url = url.split('?')
-    url = url[0]+'?'+atob(url[1]) //tira btoa da url
+    url = url[0]+'?'+ decodeURIComponent(url[1]) //tira btoa da url
     url = jsURL(url)
 
 
