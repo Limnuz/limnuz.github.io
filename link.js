@@ -34,7 +34,7 @@ function enableButton(){
 //mostra o link na tela
 function getLink(){
     link =url.link2
-    window.alert(link)
+    window.alert("OK   "+url.allCookies)
     linkA = 'loadlink.html' + '?link=' + link
     linkB ='http://adf.ly/22203685/' + linkA
     
