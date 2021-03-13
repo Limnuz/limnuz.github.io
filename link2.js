@@ -1,4 +1,7 @@
-url = jsURL(document.URL)
+var url = document.URL
+url.replace('lll',' ')
+
+url = jsURL(url)
 
 var link1 = document.querySelector("a#link1")
 link1.setAttribute("href", url.link1) //atribui link do canal
