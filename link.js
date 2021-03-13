@@ -1,28 +1,34 @@
-var url = document.URL
+window.onload = init
 
-url = url.split('?')
-url = url[0]+'?'+atob(url[1]) //tira btoa da url
-url = jsURL(url)
+function init(){
 
+    var url = document.URL
 
-
-var cookies = cookies() //recebe os cookies na forma de objeto JSON
-
-var now = new Date().getTime()
-var pastTime = now - Number(url.time)
+    url = url.split('?')
+    url = url[0]+'?'+atob(url[1]) //tira btoa da url
+    url = jsURL(url)
 
 
-if(pastTime < 864000000 || cookies.time == '1'){ 
-    url = document.URL
-    window.alert(url)
-    url = url.replace('nk.h', 'nk2.h')
-    var noAf = document.getElementById('noAf')
-    noAf.innerHTML= `<meta http-equiv="refresh" content="0; URL='${url}'"/>`
+
+    var cookies = cookies() //recebe os cookies na forma de objeto JSON
+
+    var now = new Date().getTime()
+    var pastTime = now - Number(url.time)
+
+
+    if(pastTime < 864000000 || cookies.time == '1'){ 
+        url = document.URL
+        window.alert(url)
+        url = url.replace('nk.h', 'nk2.h')
+        var noAf = document.getElementById('noAf')
+        noAf.innerHTML= `<meta http-equiv="refresh" content="0; URL='${url}'"/>`
+    }
+
+    var link1 = document.querySelector("a#link1")
+    link1.setAttribute("href", url.link1) //atribui link do canal
+    link1.innerHTML = url.text
+
 }
-
-var link1 = document.querySelector("a#link1")
-link1.setAttribute("href", url.link1) //atribui link do canal
-link1.innerHTML = url.text
 
 //habilita o botão que libera o link
 function enableButton(){
@@ -136,5 +142,7 @@ http://127.0.0.1:5500/link.html?dGV4dD18fG1haXMgZGUgMTAgZGlhc3x8JmxpbmsxPXx8aHR0
 
 {"Nome":"Marcelo"," sobrenome":"Lima"," pub_22203685":"2*1615248627649"," nome":"ola"," idade":"2"," time":"1"}
 
+
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqblRjUVpnd0sxaHFvb3huSlhscnh3dkhaV21mUXxBQ3Jtc0ttSkVIUXdNMldORXJTeWJyQ19kblpid0NURUszNkVBT0R3MHA4bmd1alpRVVQ5b1ZGWGZCbmIzbm90SUN1M3BDV2VLT1BjdW1BYnc2U2pSajJqUmo5ZVdQTTBlUy1uLXlONE9nWEZlXzFjd0tKQ0RFTQ&q=https%3A%2F%2Flimnuz.github.io%2Flink.html%3FdGV4dD18fENMSVFVRSBBUVVJIEUgU0UgSU5TQ1JFVkEgTk8gQ0FOQUwgUEFSQSBMSUJFUkFSIE8gTElOSy4gTWVzbW8gc2Ugdm9j6iBu428gcXVpc2VyIHNlIGluc2NyZXZlciBzZXLhIGxpYmVyYWRvLnx8JmxpbmsxPXx8aHR0cHM6Ly93d3cueW91dHViZS5jb20vY2hhbm5lbC9VQ0MtbDFwLWk0MndDczZMOVN0UFZ5Wmc%2Fc3ViX2NvbmZpcm1hdGlvbj0xfHwmbGluazI9fHxodHRwczovL2ltYWdlZ2xhc3Mub3JnL3x8JnRpbWU9MTYxNTU5NTgyNTEzNA%3D%3D
 */
 
