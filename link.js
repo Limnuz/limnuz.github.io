@@ -1,34 +1,32 @@
-window.onload = init
-
 function init(){
 
-    var url = document.URL
+var url = document.URL
 
-    url = url.split('?')
-    url = url[0]+'?'+ decodeURIComponent(url[1]) //tira btoa da url
-    url = jsURL(url)
-
-
-
-    var cookies = cookies() //recebe os cookies na forma de objeto JSON
-
-    var now = new Date().getTime()
-    var pastTime = now - Number(url.time)
+url = url.split('?')
+url = url[0]+'?'+ decodeURIComponent(url[1]) //tira btoa da url
+url = jsURL(url)
 
 
-    if(pastTime < 864000000 || cookies.time == '1'){ 
-        url = document.URL
-        window.alert(url)
-        url = url.replace('nk.h', 'nk2.h')
-        var noAf = document.getElementById('noAf')
-        noAf.innerHTML= `<meta http-equiv="refresh" content="0; URL='${url}'"/>`
-    }
 
-    var link1 = document.querySelector("a#link1")
-    link1.setAttribute("href", url.link1) //atribui link do canal
-    link1.innerHTML = url.text
+var cookies = cookies() //recebe os cookies na forma de objeto JSON
 
+var now = new Date().getTime()
+var pastTime = now - Number(url.time)
+
+
+if(pastTime < 864000000 || cookies.time == '1'){ 
+    url = document.URL
+    window.alert(url)
+    url = url.replace('nk.h', 'nk2.h')
+    var noAf = document.getElementById('noAf')
+    noAf.innerHTML= `<meta http-equiv="refresh" content="0; URL='${url}'"/>`
 }
+
+var link1 = document.querySelector("a#link1")
+link1.setAttribute("href", url.link1) //atribui link do canal
+link1.innerHTML = url.text
+
+
 
 //habilita o botão que libera o link
 function enableButton(){
