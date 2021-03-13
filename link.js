@@ -34,9 +34,10 @@ function enableButton(){
 //mostra o link na tela
 function getLink(){
     link =url.link2
+    window.alert(link)
     linkA = 'loadlink.html' + '?link=' + link
     linkB ='http://adf.ly/22203685/' + linkA
-    window.alert(linkB)
+    
 
     var visibleLink = document.querySelector("div#link")
     visibleLink.innerHTML = `<b>Link: </b><a href="${linkB}" target="_blank">${link} </a>`
