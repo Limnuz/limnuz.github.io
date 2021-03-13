@@ -14,7 +14,6 @@ var pastTime = now - Number(url.time)
 
 if(pastTime < 864000000 || cookies.time == '1'){ 
     url = document.URL
-    window.alert(url)
     url = url.replace('nk.h', 'nk2.h')
     var noAf = document.getElementById('noAf')
     noAf.innerHTML= `<meta http-equiv="refresh" content="0; URL='${url}'"/>`
@@ -35,7 +34,7 @@ function enableButton(){
 //mostra o link na tela
 function getLink(){
     link =url.link2
-    linkA = 'loadlink.html' + '?link=' + encodeURIComponent(link)
+    linkA = 'loadlink.html' + '?link=' + link
     linkB ='http://adf.ly/22203685/' + linkA
 
     var visibleLink = document.querySelector("div#link")
