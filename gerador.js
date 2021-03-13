@@ -14,8 +14,9 @@ function generateUrl(){
     
 
     var url = "https://limnuz.github.io/link.html?"
-    var urlPar = encodeURI(`text=${text}&link1=${link1}&link2=${link2}&time=${createDate}`)
+    var urlPar = `text=${text}&link1=${link1}&link2=${link2}&time=${createDate}`
     url += urlPar
+    url = url.replace(' ','lll')
 
     var result = document.querySelector("#result")
     result.innerHTML = url
