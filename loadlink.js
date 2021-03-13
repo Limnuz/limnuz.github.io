@@ -4,6 +4,6 @@ url = decodeURIComponent(url)
 
 var load = document.createElement('meta')
 load.setAttribute('http-equiv', 'refresh')
-load.setAttribute('content', `5 URL=${url}`)
+load.setAttribute('content', `0 URL=${url}`)
 
 document.head.appendChild(load)
