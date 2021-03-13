@@ -72,7 +72,6 @@ function jsURL(url, separator='||'){
     }
     
     var urlPage = url
-    window.alert(url)
     url = url.split(separator)
     
     //codifica os atributos entre os separadores(||)
@@ -103,7 +102,7 @@ function jsURL(url, separator='||'){
             url.push(temp2[j])
         }
     }
-
+    
     
     
     //deixa os parametros em formato de texto para ser convertido em JSON
@@ -120,7 +119,7 @@ function jsURL(url, separator='||'){
     temp = temp.substring(0, temp.length - 1) + "}"
     
     url = temp
-
+    window.alert(url)
     url = JSON.parse(url)
     url.urlPage = urlPage
     url.purePage = purePage
