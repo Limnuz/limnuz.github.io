@@ -36,11 +36,11 @@ function enableButton(){
 function getLink(){
     link =url.link2
     linkA = 'https://limnuz.github.io/loadlink.html' + '?link=' + link   
-    //linkB ='http://adf.ly/22203685/' + linkA
+    linkB ='http://adf.ly/22203685/' + linkA
     
 
     var visibleLink = document.querySelector("div#link")
-    visibleLink.innerHTML = `<b>Link: </b><a href="${linkA}" target="_blank">${link} </a>`
+    visibleLink.innerHTML = `<b>Link: </b><a href="${linkB}" target="_blank">${link} </a>`
 }
 
 // substitui todas as ocorrências de um determinado termo em uma string.
