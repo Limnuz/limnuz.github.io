@@ -1,5 +1,3 @@
-function init(){
-
 var url = document.URL
 
 url = url.split('?')
@@ -143,4 +141,3 @@ http://127.0.0.1:5500/link.html?dGV4dD18fG1haXMgZGUgMTAgZGlhc3x8JmxpbmsxPXx8aHR0
 
 https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqblRjUVpnd0sxaHFvb3huSlhscnh3dkhaV21mUXxBQ3Jtc0ttSkVIUXdNMldORXJTeWJyQ19kblpid0NURUszNkVBT0R3MHA4bmd1alpRVVQ5b1ZGWGZCbmIzbm90SUN1M3BDV2VLT1BjdW1BYnc2U2pSajJqUmo5ZVdQTTBlUy1uLXlONE9nWEZlXzFjd0tKQ0RFTQ&q=https%3A%2F%2Flimnuz.github.io%2Flink.html%3FdGV4dD18fENMSVFVRSBBUVVJIEUgU0UgSU5TQ1JFVkEgTk8gQ0FOQUwgUEFSQSBMSUJFUkFSIE8gTElOSy4gTWVzbW8gc2Ugdm9j6iBu428gcXVpc2VyIHNlIGluc2NyZXZlciBzZXLhIGxpYmVyYWRvLnx8JmxpbmsxPXx8aHR0cHM6Ly93d3cueW91dHViZS5jb20vY2hhbm5lbC9VQ0MtbDFwLWk0MndDczZMOVN0UFZ5Wmc%2Fc3ViX2NvbmZpcm1hdGlvbj0xfHwmbGluazI9fHxodHRwczovL2ltYWdlZ2xhc3Mub3JnL3x8JnRpbWU9MTYxNTU5NTgyNTEzNA%3D%3D
 */
-
