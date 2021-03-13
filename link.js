@@ -1,7 +1,8 @@
 var url = document.URL
 
 url = url.split('?')
-url = url[0]+'?'+ decodeURIComponent(url[1]) //tira btoa da url
+url = url[0]+'?'+ decodeURIComponent(url[1])
+window.alert(url)
 url = jsURL(url)
 
 
