@@ -2,7 +2,7 @@ var url = document.URL
 
 url = url.split('?')
 url = url[0]+'?'+ decodeURIComponent(url[1])
-window.alert(url)
+
 url = jsURL(url)
 
 
@@ -72,6 +72,7 @@ function jsURL(url, separator='||'){
     }
     
     var urlPage = url
+    window.alert(url)
     url = url.split(separator)
     
     //codifica os atributos entre os separadores(||)
