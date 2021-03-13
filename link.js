@@ -4,6 +4,8 @@ url = url.split('?')
 url = url[0]+'?'+atob(url[1]) //tira btoa da url
 url = jsURL(url)
 
+
+
 var cookies = cookies() //recebe os cookies na forma de objeto JSON
 
 var now = new Date().getTime()
