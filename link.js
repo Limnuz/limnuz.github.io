@@ -35,7 +35,7 @@ function enableButton(){
 //mostra o link na tela
 function getLink(){
     link =url.link2
-    linkA = 'loadlink.html' + '?link=' + link
+    linkA = 'https://limnuz.github.io/loadlink.html' + '?link=' + link   
     linkB ='http://adf.ly/22203685/' + linkA
     
 
