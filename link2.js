@@ -34,7 +34,7 @@ function jsURL(url, separator='||'){
     for(var i in url){
         if(i%2 != 0){
             
-            url[i] = separator + window.encodeURI(url[i]) + separator
+            url[i] = separator + window.encodeURIComponent(url[i]) + separator
             
         }
     }
@@ -68,7 +68,7 @@ function jsURL(url, separator='||'){
             temp += `"${url[i]}":"${url[i+1]}",`
         } else {
             
-            temp += `"${url[i]}":"${window.decodeURI(url[i+1].split(separator)[1])}",`
+            temp += `"${url[i]}":"${window.decodeURIComponent(url[i+1].split(separator)[1])}",`
         }
     }
     
