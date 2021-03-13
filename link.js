@@ -1,5 +1,6 @@
 var url = document.URL
-
+url = url.split('?')
+url = url[0]+'?'+ decodeURIComponent(url[1])
 
 url = jsURL(url)
 

@@ -14,7 +14,7 @@ function generateUrl(){
     
 
     var url = "https://limnuz.github.io/link.html?"
-    var urlPar = `text=${text}&link1=${link1}&link2=${link2}&time=${createDate}`
+    var urlPar = encodeURIComponent(`text=${text}&link1=${link1}&link2=${link2}&time=${createDate}`)
     url += urlPar
 
     var result = document.querySelector("#result")
