@@ -1,5 +1,5 @@
 var url = document.URL
-url.replace('lll',' ')
+
 
 url = jsURL(url)
 
