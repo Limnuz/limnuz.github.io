@@ -19,9 +19,10 @@ if(pastTime < 864000000 || cookies.time == '1'){
     noAf.innerHTML= `<meta http-equiv="refresh" content="0; URL='${url}'"/>`
 }
 
+
 var link1 = document.querySelector("a#link1")
 link1.setAttribute("href", url.link1) //atribui link do canal
-link1.innerHTML = url.text
+link1.innerHTML = replaceAll(url.text, '+', ' ')
 
 
 
@@ -34,13 +35,21 @@ function enableButton(){
 //mostra o link na tela
 function getLink(){
     link =url.link2
-    window.alert(url)
     linkA = 'loadlink.html' + '?link=' + link
     linkB ='http://adf.ly/22203685/' + linkA
     
 
     var visibleLink = document.querySelector("div#link")
     visibleLink.innerHTML = `<b>Link: </b><a href="${linkB}" target="_blank">${link} </a>`
+}
+
+// substitui todas as ocorrências de um determinado termo em uma string.
+function replaceAll(str, before, later){
+    while(str.indexOf(before) != -1){
+        str = str.replace(before, later)
+    }
+
+    return str
 }
 
 //Pega os cookies e retorna em formato objeto JSON
@@ -89,7 +98,6 @@ function jsURL(url, separator='||'){
         temp += url[i]
     }
 
-    
     var purePage = temp.split("?")[0]
     url = temp.split("?")[1]
     
@@ -101,9 +109,7 @@ function jsURL(url, separator='||'){
             url.push(temp2[j])
         }
     }
-    
-    
-    
+
     //deixa os parametros em formato de texto para ser convertido em JSON
     temp = "{"
     for(let i = 0; i < url.length; i+=2){
@@ -118,7 +124,6 @@ function jsURL(url, separator='||'){
     temp = temp.substring(0, temp.length - 1) + "}"
     
     url = temp
-    window.alert(url)
     url = JSON.parse(url)
     url.urlPage = urlPage
     url.purePage = purePage
@@ -129,16 +134,8 @@ function jsURL(url, separator='||'){
     return url
 }
 /*
-https://limnuz.github.io/link.html?dGV4dD18fENMSVFVRSBBUVVJIFBBUkEgTElCRVJBUnx8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tfHwmbGluazI9fHxodHRwOi8vd3d3LmR1Y2tkdWNrZ28uY29tfHwmdGltZT0xNjE1MDA1MDkyMTg2
+http://127.0.0.1:5500/link.html?text%3D%7C%7CTestando%20as%20coisas%2Baqui%3F%20%24%24%24%20%26%26%26%20%3D%3D%3D%7C%7C%26link1%3D%7C%7Chttp%3A%2F%2Fwww.google.com.br%3Fvar1%3Dnada%7C%7C%26link2%3D%7C%7Chttp%3A%2F%2Fwww.duckduckgo.com%7C%7C%26time%3D1615646881164
 
-http://127.0.0.1:5500/link.html?dGV4dD18fENMSVFVRSBBUVVJIFBBUkEgTElCRVJBUnx8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tfHwmbGluazI9fHxodHRwOi8vd3d3LmR1Y2tkdWNrZ28uY29tfHwmdGltZT0xNjE1MDA1MDkyMTg2
+https://limnuz.github.io/link.html?text%3D%7C%7CTestando%20as%20coisas%2Baqui%3F%20%24%24%24%20%26%26%26%20%3D%3D%3D%7C%7C%26link1%3D%7C%7Chttp%3A%2F%2Fwww.google.com.br%3Fvar1%3Dnada%7C%7C%26link2%3D%7C%7Chttp%3A%2F%2Fwww.duckduckgo.com%7C%7C%26time%3D1615646881164
 
-https://limnuz.github.io/link.html?dGV4dD18fG1haXMgZGUgMTAgZGlhc3x8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tLmJyfHwmbGluazI9fHxodHRwOi8vd3d3LmdpdGh1Yi5jb218fCZ0aW1lPTE2MTQyMDU4MjM0NTc=
-
-http://127.0.0.1:5500/link.html?dGV4dD18fG1haXMgZGUgMTAgZGlhc3x8JmxpbmsxPXx8aHR0cDovL3d3dy5nb29nbGUuY29tLmJyfHwmbGluazI9fHxodHRwOi8vd3d3LmdpdGh1Yi5jb218fCZ0aW1lPTE2MTQyMDU4MjM0NTc=
-
-{"Nome":"Marcelo"," sobrenome":"Lima"," pub_22203685":"2*1615248627649"," nome":"ola"," idade":"2"," time":"1"}
-
-
-https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqblRjUVpnd0sxaHFvb3huSlhscnh3dkhaV21mUXxBQ3Jtc0ttSkVIUXdNMldORXJTeWJyQ19kblpid0NURUszNkVBT0R3MHA4bmd1alpRVVQ5b1ZGWGZCbmIzbm90SUN1M3BDV2VLT1BjdW1BYnc2U2pSajJqUmo5ZVdQTTBlUy1uLXlONE9nWEZlXzFjd0tKQ0RFTQ&q=https%3A%2F%2Flimnuz.github.io%2Flink.html%3FdGV4dD18fENMSVFVRSBBUVVJIEUgU0UgSU5TQ1JFVkEgTk8gQ0FOQUwgUEFSQSBMSUJFUkFSIE8gTElOSy4gTWVzbW8gc2Ugdm9j6iBu428gcXVpc2VyIHNlIGluc2NyZXZlciBzZXLhIGxpYmVyYWRvLnx8JmxpbmsxPXx8aHR0cHM6Ly93d3cueW91dHViZS5jb20vY2hhbm5lbC9VQ0MtbDFwLWk0MndDczZMOVN0UFZ5Wmc%2Fc3ViX2NvbmZpcm1hdGlvbj0xfHwmbGluazI9fHxodHRwczovL2ltYWdlZ2xhc3Mub3JnL3x8JnRpbWU9MTYxNTU5NTgyNTEzNA%3D%3D
 */
