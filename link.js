@@ -20,6 +20,10 @@ var link1 = document.querySelector("a#link1")
 link1.setAttribute("href", url.link1) //atribui link do canal
 link1.innerHTML = replaceAll(url.text, '+', ' ')
 
+function BloqueadorAtivo(){
+    window.alert('Bloqueador Ativo')
+}
+
 //habilita o botão que libera o link
 function enableButton(){
     var btn = document.querySelector("input#getlink")
