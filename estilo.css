@@ -43,4 +43,5 @@ a#link1:visited {
 a#link1 {
     color: blue;
     font-weight: bold;
+    text-decoration: none;
 }
