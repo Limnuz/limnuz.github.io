@@ -39,3 +39,8 @@ a#link1:visited {
     color: blue;
     font-weight: bold;
 }
+
+a#link1 {
+    color: blue;
+    font-weight: bold;
+}
