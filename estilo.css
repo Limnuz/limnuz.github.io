@@ -37,4 +37,5 @@ div{
 
 a#link1:visited {
     color: blue;
+    font-weight: bold;
 }
