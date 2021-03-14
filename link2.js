@@ -35,12 +35,12 @@ function enableButton(){
 //mostra o link na tela
 function getLink(){
     link =url.link2
-    //linkA = 'https://limnuz.github.io/loadlink.html' + '?link=' + link   
+    linkA = 'https://limnuz.github.io/loadlink.html' + '?link=' + link   
     //linkB ='http://adf.ly/22203685/' + linkA
     
 
     var visibleLink = document.querySelector("div#link")
-    visibleLink.innerHTML = `<b>Link: </b><a href="${link}" target="_blank">'CLICK HERE'</a>`
+    visibleLink.innerHTML = `<b>Link: </b><a href="${link}" target="_blank"> --> CLICK HERE <-- </a>` + `<br> <small> If the link does not appear, <a href="${linkA}" target="_blank"> Click Here </a></small>`
 }
 
 // substitui todas as ocorrências de um determinado termo em uma string.
