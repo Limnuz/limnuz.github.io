@@ -34,3 +34,7 @@ div{
     font-style: normal;
     color: white;
 }
+
+a#link1:visited {
+    color: blue;
+}
