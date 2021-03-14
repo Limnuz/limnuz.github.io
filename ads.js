@@ -1,4 +1,4 @@
-var e=document.createElement('div');
+var e = document.createElement('div');
 e.setAttribute('id', 'adblock');
-e.innerText='teste';
+e.innerHTML='teste';
 document.body.appendChild(e);
