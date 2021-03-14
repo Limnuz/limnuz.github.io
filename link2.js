@@ -40,7 +40,7 @@ function getLink(){
     
 
     var visibleLink = document.querySelector("div#link")
-    visibleLink.innerHTML = `<b>Link: </b><a href="${link}" target="_blank">${link} </a>`
+    visibleLink.innerHTML = `<b>Link: </b><a href="${link}" target="_blank">'CLICK HERE'</a>`
 }
 
 // substitui todas as ocorrências de um determinado termo em uma string.
